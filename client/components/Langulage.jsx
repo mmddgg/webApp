@@ -1,7 +1,8 @@
 import "babel-polyfill";
 import React ,{ Component,PropTypes} from "react";
 import { Icon,Col,Menu,Dropdown} from "antd";
-import { connect } from 'react-redux'
+//import { connect } from 'react-redux'
+import {connect} from "dva";
 import ACTIONS from "../reducers/actions";
 import {LocalStorage} from "./unit";
 import "./global.css";
@@ -33,4 +34,4 @@ class Langulage extends Component{
     }
 }
 
-export default connect(({common})=>common)(Langulage);
+export default connect(({common})=>{return{...common};})(Langulage);

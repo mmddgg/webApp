@@ -51,7 +51,7 @@ function handlePath(url,model){
     }
     return status;
 }
-
+//检测页面权限 和 登录超时的修饰器函数，需要给 dashoboard 下属的 route对应UI 都添加
 const checkLoginAndPurview = WraperComponent => {
     class CheckPurview extends Component{
         constructor(props){

@@ -1,6 +1,6 @@
 
 
-export default {
+const reduxSagaActions =  {
     common:{
         setLanguage:'common.setLanguage',
         setPurview:'common.setPurview',
@@ -26,3 +26,20 @@ export default {
         }
     },
 };
+
+const  dvaActions = {
+    common:{
+        setLanguage:'common/setLanguage',
+        setPurview:'common/setPurview',
+        setUserMesg:'common/setUserMesg',
+        setProps:'common/setProps'
+    },
+    userCenter:{
+        login:'userCenter/login',
+        setProps:'userCenter/setProps',
+        checkUser:'userCenter/checkUser',
+        queryUser:'userCenter/queryUser'
+    },
+};
+
+export default dvaActions;

@@ -16,6 +16,7 @@ export default {
             method:'POST',
             body:JSON.stringify(parm)
         })
+        console.log(result);
         return mockStatus ? unti.builtReturn(mockData.login) : result;
     },
     //查询用户信息

@@ -18,6 +18,7 @@ const textMesgList = defineMessages({
     },
     indexTitle:{id:'public.indexTitle', defaultMessage:'Trusty Ecommerce XXXX管理系统'},
     ieEmpety:{id:'login.tip.username.empety',defaultMessage:'该用户名尚未注册，请联系管理人员。'},
+    userErr:{id:"login.tip.userErr",defaultMessage:"用户名由4-10位的数字，字母,-,_组成",},
     plsInput:{id:'public.plsInput',defaultMessage:'请输入'},
     userName:{id:'public.userName',defaultMessage:'用户名'},
     pwd:{id:'public.pwd',defaultMessage:'密码'},
@@ -46,7 +47,7 @@ class EneryIndex extends Component{
             if (!err) {
                 delete values.remember;
                 dispatch({
-                    type:userCenter.login.submit,
+                    type:userCenter.login,
                     payload:values
                 });
             }
@@ -56,18 +57,19 @@ class EneryIndex extends Component{
         if(!name){return false;}
         const { dispatch} = this.props;
         dispatch({
-            type:userCenter.checkNickname.submit,
+            type:userCenter.checkNickname,
             payload:name
         });
     }
     componentWillReceiveProps(nextProps,props){
         if(nextProps.userMesg){
-            nextProps.history.push(path.dashboard.rootPath)
+            nextProps.history.push(path.dashboard.rootPath);
+            nextProps.dispatch({
+                type:userCenter.setProps,
+                payload:{userMesg:undefined}
+            });
         }
-        nextProps.dispatch({
-            type:userCenter.login.setProps,
-            payload:{userMesg:undefined}
-        });
+        
     }
     hasErrors(value,error) {
         return !( value.account && !error.account ) ||  !( value.password && !error.password )
@@ -107,7 +109,7 @@ class EneryIndex extends Component{
                     <FormItem> 
                     {getFieldDecorator('account', {
                         rules: [
-                            {pattern:/^[A-Za-z0-9-_]{4,10}$/g,message:'用户名由4-10位的数字，字母,-,_组成'},
+                            {pattern:/^[A-Za-z0-9-_]{4,10}$/g,message:intl.formatMessage(textMesgList.userErr)},
                             {   required: true,
                                 message: `${intl.formatMessage(textMesgList.plsInput)}${intl.formatMessage(textMesgList.userName)}`
                             },
@@ -160,6 +162,7 @@ class EneryIndex extends Component{
                 </Content>
             </Layout>
             <Footer>
+                { intl.formatMessage({id:'public.testText'})}
                 <PublicFooter />
             </Footer>
             </Layout>
@@ -169,6 +172,6 @@ class EneryIndex extends Component{
 
 
 export default connect((state,ownProps)=>{
-    const {login} = state;
-    return {...login};
+    const {userCenter} = state;
+    return { ...userCenter};
 })(Form.create()(injectIntl(EneryIndex)));

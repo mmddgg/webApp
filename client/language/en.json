@@ -1,1 +1,18 @@
-{}
+{
+    "public.productTip":"Welcome to login",
+    "public.indexTitle" :"Trusty Ecommerce XXXX  MS ",
+    "login.tip.username.empety":"该用户名尚未注册，请联系管理人员。",
+    "public.plsInput":"Pls input",
+    "public.userName":"userName",
+    "public.pwd":"password",
+    "public.login":"Login",
+    "login.tip.userErr":"The user name is composed of 4-10 digit numbers, letters, - and _",
+    "public.rememberMe":"remember me",
+    "public.forgotPwd":"forgot passowrd",
+    "public.copyright":"sy-fintech produce",
+    "public.agreement":"agreement",
+    "public.aboutme":"about me",
+    "public.request.error.title":"request error：{code} .",
+    "public.request.error.desc" :"error mesg，url：{url} . ",
+    "public.testText":"test text"
+}

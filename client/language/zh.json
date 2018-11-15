@@ -4,6 +4,7 @@
     "login.tip.username.empety":"该用户名尚未注册，请联系管理人员。",
     "public.plsInput":"请输入",
     "public.userName":"用户名",
+    "login.tip.userErr":"用户名由4-10位的数字，字母,-,_组成",
     "public.pwd":"密码",
     "public.login":"登录",
     "public.rememberMe":"记住我",
@@ -12,5 +13,6 @@
     "public.agreement":"条款",
     "public.aboutme":"关于我",
     "public.request.error.title":"请求异常：{code} .",
-    "public.request.error.desc" :"异常请求信息，地址：{url} . "
+    "public.request.error.desc" :"异常请求信息，地址：{url} . ",
+    "public.testText":"测试文案"
 }

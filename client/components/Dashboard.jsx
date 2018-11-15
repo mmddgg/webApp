@@ -60,7 +60,7 @@ class DashBoard extends Component{
         })){
             return false;
         }
-        //如果不存在用户信息，说明是登录有效期内，刷新了url，需要重新获取用户信息
+        //如果不存在用户信息，说明登录有效期内，刷新了url，需要重新获取用户信息
         if(!userMesg){
             const userId = window.localStorage.getItem('TRUSTMS_USERID');
             dispatch({

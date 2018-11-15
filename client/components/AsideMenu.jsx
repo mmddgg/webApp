@@ -101,13 +101,19 @@ class AsideMenu extends Component{
         const menuKey = this.menuKey;
         const {events ,wares , order , prize  ,setting} = purviewList;
         const {selectKey,openKey} = this.handlePath();
+
         const defaultSet = {
             selectedKeys : [selectKey],
             openKeys:[openKey]
         };
-        if(!openKey){ delete defaultSet.defaultOpenKeys};
+        if(!openKey){ 
+            delete defaultSet.openKeys
+        }else{
+            defaultSet.openKeys = defaultSet.openKeys.filter(item => item!="")
+        };
+        
         const menuList =  (
-            <Menu mode="inline" onOpenChange={this.onOpenChange.bind(this)} {...defaultSet} className="AsideMenu">
+            <Menu mode="inline"  {...defaultSet} className="AsideMenu">
                 <h6 className="productTitle">产品A</h6>
                 <Menu.Item key={menuKey.priview}><Icon type="calendar"  style={iconStyle} />
                     <Link to={`${match.url}`}>概览</Link>
