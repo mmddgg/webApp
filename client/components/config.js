@@ -1,0 +1,1 @@
+export  const loginTimeout = 30 ; //分钟 登录token有效期，

@@ -1,0 +1,29 @@
+
+.ant-layout-content > .ant-row{
+   padding: 0 50px;
+   transform: translate(0,25%);
+   max-width: 1000px;
+   margin: 20px auto 0;
+}
+.ant-layout .ant-layout-header{
+    background: #40a9ff;
+}
+
+.ant-form,
+.ant-form label,
+ .ant-form-item-required:before{
+    font-size: 12px !important;
+}
+.loginForm{transform: translate(0,25%);}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    overflow: hidden;
+}
+.ant-carousel .slick-slide img{
+    width: 100%;
+}
+
+.header  >.ant-row  > .ant-col-1:hover{
+    background: rgba(184, 208, 230, 0.2);
+}

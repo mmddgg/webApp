@@ -1,0 +1,56 @@
+/* 公共样式 */
+*{
+    font-size: 12px;
+    font-weight: 100;
+}
+* .ant-input{ font-size: 12px;}
+
+
+.rootRoute >.ant-layout > .ant-layout{ min-height: 500px;}
+
+
+.ant-layout-sider-trigger{top:166px;}
+
+.dropDownMenu{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.headIco{
+     font-size: 14px;
+     color: #fff;
+     cursor: pointer;
+}
+
+.ant-layout-footer .antd-pro-global-footer-globalFooter{
+    margin: 12px 0;
+}
+
+.AsideMenu{
+    height: '100%';
+    border-right:none;
+}
+.AsideMenu .ant-menu-item > a{
+    display: inline-block;
+}
+
+.AsideMenu .ant-menu-vertical .ant-menu-item:after, .AsideMenu .ant-menu-vertical-left .AsideMenu .AsideMenu .ant-menu-item:after, 
+.AsideMenu .ant-menu-vertical-right .ant-menu-item:after, 
+.AsideMenu  .ant-menu-inline .ant-menu-item:after{
+    border-right: 3px solid #40a9ff;
+}
+
+.AsideMenu  .ant-menu-vertical .ant-menu-item,
+.AsideMenu  .ant-menu-vertical-left .ant-menu-item, 
+.AsideMenu  .ant-menu-vertical-right .ant-menu-item, 
+.AsideMenu  .ant-menu-inline .ant-menu-item, 
+.AsideMenu  .ant-menu-vertical .ant-menu-submenu-title, 
+.AsideMenu  .ant-menu-vertical-left .ant-menu-submenu-title, 
+.AsideMenu  .ant-menu-vertical-right .ant-menu-submenu-title,
+.AsideMenu  .ant-menu-inline .ant-menu-submenu-title
+{
+    font-size: 12px;
+}

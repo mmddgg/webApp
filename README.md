@@ -1,2 +1,2 @@
-# webApp
-base React + Dva + Andt  create a  web application.
+# webApplicaiton
+base (React) web application
