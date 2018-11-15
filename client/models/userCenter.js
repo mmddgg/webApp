@@ -1,6 +1,6 @@
 import { call, put,select,takeLatest } from 'redux-saga/effects'
 import API from "../api/api";
-import ACTION from "../reducers/actions";
+import ACTION from "../models/actions";
 
 const initState={
     loading:false

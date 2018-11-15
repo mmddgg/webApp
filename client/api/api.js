@@ -1,12 +1,9 @@
-import fetch from 'isomorphic-fetch';
 import ngprogress from "nprogress";
 import xFetch from './fetch';
 import {baseUrl,userCenter ,unti} from "./ApiUrl.js";
 import mockData from "../../mock/mock";
 
 const mockStatus = false;
-
-
 
 export default {
     //登录

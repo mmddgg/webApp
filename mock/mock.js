@@ -12,16 +12,16 @@ Mock.Random.cparagraph();
 Mock.Random.csentence();
 
 export default{
-    checkNickname:Mock.mock({
+    checkUsername:Mock.mock({
         'isRepeat|1-2':true
     }),
-    register:Mock.mock({
+    login:Mock.mock({
         'userId|1':uuid.v4    
     }),
-    chatroomList:Mock.mock({
+    orderList:Mock.mock({
         "datalist|10":[{
-            chatroomId:function(){
-                return 'room_id_' + uuid.v4();
+            orderId:function(){
+                return 'order_id_' + uuid.v4();
             },
             name:/[\u4e00-\u9fa5]{5,10}/,
             description:/[\u4e00-\u9fa5_a-zA-Z0-9]{15,}/,
@@ -30,27 +30,9 @@ export default{
             iconImg:function(){
                 return Mock.Random.image('200x100',Mock.mock('@color'), '#FFF', 'Mock.js');
             },
-            maxPerson:10,
-            'currentPerson|1-10':2,
-            'necessaryPwd|1-2':true,
-            pwd:/[_a-zA-Z0-9]{5,10}/
+            sales:10,
+            'isdelete|1-2':true
         }]
-    }),
-    chatroomDetail:Mock.mock({
-        chatroomId:function(){
-            return 'room_id_' + uuid.v4();
-        },
-        name:/[\u4e00-\u9fa5]{5,10}/,
-        description:/[\u4e00-\u9fa5_a-zA-Z0-9]{15,}/,
-        creatorId:uuid.v4,
-        createTime:'@date("yyyy-MM-dd HH:mm:ss")',
-        iconImg:function(){
-            return Mock.Random.image('200x100',Mock.mock('@color'), '#FFF', 'Mock.js');
-        },
-        maxPerson:10,
-        'currentPerson|1-10':2,
-        'necessaryPwd|1-2':true,
-        pwd:/[_a-zA-Z0-9]{5,10}/
     })
 };
 

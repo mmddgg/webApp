@@ -1,7 +1,5 @@
-import { WSAETOOMANYREFS } from "constants";
 
 const baseUrl = '/snatch-manager';
-
 const userCenter = {
     checkUser:'/user', //查询用户是否存在
     login:'/user/login', //登录

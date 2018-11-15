@@ -1,6 +1,6 @@
 import { call, put,select,takeLatest } from 'redux-saga/effects';
 import API from "../api/api";
-import ACTION from "../reducers/actions";
+import ACTION from "../models/actions";
 
 const initState={
     languageKey:'en-US',
@@ -77,7 +77,7 @@ export default {
             return {...state,languageKey:action.payload}
         },
         'setPurview'(state,action){
-            return {...state }; //purviewList : action.payload
+            return {...state }; //purviewList : handlePurview(action.payload)
         },
         'setLanguage'(state,action){
             return {...state,languageKey:action.payload};

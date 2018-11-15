@@ -3,35 +3,35 @@ import { Icon,Form ,Layout,Dropdown,Row,Col,Menu,message} from "antd";
 import {IntlProvider, FormattedMessage ,defineMessages,addLocaleData,injectIntl} from 'react-intl';
 import {Route,Router,BrowserRouter,browserHistory} from "react-router-dom";
 import { connect } from 'react-redux'
-import ACTIONS from "../reducers/actions";
-import "./global.css";
+import ACTIONS from "../../models/actions";
+import "../global/global.css";
 import "./dashboard.css";
-import API from "../api/api";
-import path from "../route/path.js";
-import Langulage from "./Langulage.jsx";
-import PublicFooter from "./PublicFooter.jsx";
-import AsideMenu from "./AsideMenu.jsx";
+import API from "../../api/api";
+import path from "../../route/path.js";
+import Langulage from "../global/Langulage.jsx";
+import PublicFooter from "../global/PublicFooter.jsx";
+import AsideMenu from "../global/AsideMenu.jsx";
 import Priview from "./Priview.jsx";
-import {checkLogin} from "./unit";
+import {checkLogin} from "../global/unit";
 
-import EventList from "./events/EventList.jsx";
-import EventCreate from "./events/EventCreate.jsx";
-import EventDetail from "./events/EventDetail.jsx";
-import WaresDetail from "./wares/WaresDetail.jsx";
-import WaresList from "./wares/WaresList.jsx";
-import OrderList from "./order/OrderList.jsx";
-import OrderDetail from "./order/OrderDetail.jsx";
-import VerificationSheetList from "./order/VerificationSheetList.jsx";
-import VerificationSheetDetail from "./order/VerificationSheetDetail.jsx";
-import OpenPrizeList from "./prize/OpenPrizeList.jsx";
-import WinnerPrizePerson from "./prize/WinnerPrizePerson.jsx";
+import EventList from "../events/EventList.jsx";
+import EventCreate from "../events/EventCreate.jsx";
+import EventDetail from "../events/EventDetail.jsx";
+import WaresDetail from "../wares/WaresDetail.jsx";
+import WaresList from "../wares/WaresList.jsx";
+import OrderList from "../order/OrderList.jsx";
+import OrderDetail from "../order/OrderDetail.jsx";
+import VerificationSheetList from "../order/VerificationSheetList.jsx";
+import VerificationSheetDetail from "../order/VerificationSheetDetail.jsx";
+import OpenPrizeList from "../prize/OpenPrizeList.jsx";
+import WinnerPrizePerson from "../prize/WinnerPrizePerson.jsx";
 
-import Purview from "./setting/Purview.jsx";
-import Self from "./setting/Self.jsx";
-import User from "./setting/User.jsx";
-import Role from "./setting/Role.jsx";
-import LoginLog from "./setting/LoginLog.jsx";
-import Params from "./setting/Params.jsx";
+import Purview from "../setting/Purview.jsx";
+import Self from "../setting/Self.jsx";
+import User from "../setting/User.jsx";
+import Role from "../setting/Role.jsx";
+import LoginLog from "../setting/LoginLog.jsx";
+import Params from "../setting/Params.jsx";
 
 const textMesgList = defineMessages({
     logoff:{
@@ -77,7 +77,6 @@ class DashBoard extends Component{
     }
     render(){
         const { intl ,match} = this.props;
-        console.log(this.props);
         const heanMenuItemIcon = {marginRight:6};
         const userMenu = (
             <Menu  onClick={this.menuChange.bind(this)} mode="vertical">

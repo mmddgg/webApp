@@ -9,17 +9,10 @@ import "nprogress/nprogress.css";
 
 
 
-const textMesgList = defineMessages({
-    unknownErrorMsg: {
-        id: 'public.unknownErrorMsg',
-        defaultMessage: '发生未知错误。',
-    }
-});
-
 
 const check404 = (res) => {
     if (res.status === 404) {
-        location.hash = '#/404';
+        location.hash = '/404';
         // browserHistory.push(utilities.notFoundPath);
     }
     return res;
@@ -28,14 +21,15 @@ const check404 = (res) => {
 const check401 = (res) => {
     if (res.status === 401) {
         window.sessionStorage.clear();
-        location.href = '#/401';
+        location.href = '/401';
+        // browserHistory.push('/401');
     }
     return res;
 };
 
 const check403 = (res, opts) => {
     if (res.status === 403 && !opts.ignore403) {
-        location.hash = '#/403';
+        location.href = '/403';
         // browserHistory.push('/403');
     }
     return res;
@@ -48,11 +42,6 @@ const check200 = (res, conf) => {
     }
     return res;
 };
-
-
-
-
-
 
 
 const handleJSON = (resJson, config) => {

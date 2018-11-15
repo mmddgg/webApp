@@ -2,12 +2,11 @@ import React ,{ Component,PropTypes} from "react";
 import { Checkbox,Form ,Input,Button,Layout,Carousel,Row,Col,Icon} from "antd";
 import {IntlProvider, FormattedMessage ,defineMessages,addLocaleData,injectIntl} from 'react-intl';
 import { connect } from 'react-redux';
-import ACTIONS from "../reducers/actions";
+import ACTIONS from "../../models/actions";
 import  cookie from "js-cookie";
 import "./global.css";
 import "./EnetryIndex.css";
-import API from "../api/api";
-import path from "../route/path";
+import path from "../../route/path";
 import Langulage from "./Langulage.jsx";
 import PublicFooter from "./PublicFooter.jsx";
 

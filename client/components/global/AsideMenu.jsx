@@ -2,7 +2,7 @@ import React ,{ Component,PropTypes} from "react";
 import { Icon,Menu} from "antd";
 import {IntlProvider, FormattedMessage ,defineMessages,addLocaleData,injectIntl} from 'react-intl';
 import {Link} from "react-router-dom";
-import path from "../route/path";
+import path from "../../route/path";
 
 const { SubMenu } = Menu;
 class AsideMenu extends Component{
@@ -91,9 +91,6 @@ class AsideMenu extends Component{
         }
         return {selectKey,openKey};
     }
-    onOpenChange = (openKeys) => {
-        console.log("openKeys",openKeys);
-    }
     render(){
         const {match ,purviewList} = this.props;
         
@@ -103,18 +100,20 @@ class AsideMenu extends Component{
         const {selectKey,openKey} = this.handlePath();
 
         const defaultSet = {
-            selectedKeys : [selectKey],
-            openKeys:[openKey]
+            // selectedKeys : [selectKey],
+            // openKeys:[openKey]
+            defaultSelectedKeys: [selectKey],
+            defaultOpenKeys:[openKey]
         };
         if(!openKey){ 
-            delete defaultSet.openKeys
+            delete defaultSet.defaultOpenKeys
         }else{
-            defaultSet.openKeys = defaultSet.openKeys.filter(item => item!="")
+            defaultSet.defaultOpenKeys = defaultSet.defaultOpenKeys.filter(item => item!="")
         };
         
         const menuList =  (
-            <Menu mode="inline"  {...defaultSet} className="AsideMenu">
-                <h6 className="productTitle">产品A</h6>
+            <Menu mode="inline"  {...defaultSet}   className="AsideMenu">
+                {/* <h6 className="productTitle">产品A</h6> */}
                 <Menu.Item key={menuKey.priview}><Icon type="calendar"  style={iconStyle} />
                     <Link to={`${match.url}`}>概览</Link>
                 </Menu.Item>

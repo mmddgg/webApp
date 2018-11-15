@@ -2,7 +2,7 @@ import React ,{ Component,PropTypes} from "react";
 import { Row,Col,Table,Input,Button} from "antd";
 import path from "../../route/path";
 import {Link} from "react-router-dom";
-import checkLoginAndPurview from "../CheckPurview.js";
+import checkLoginAndPurview from "../global/CheckPurview.js";
 import {IntlProvider, FormattedMessage ,defineMessages,addLocaleData,injectIntl} from 'react-intl';
 
 

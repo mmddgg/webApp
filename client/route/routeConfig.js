@@ -1,15 +1,11 @@
-//基础依赖
 import "babel-polyfill";
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route,Router} from "dva/router";
 import path from "./path";
-
-
-//外部文件引入相关
-import EnetryIndex from "../components/EnetryIndex.jsx"; //首页UI
-import Dashboard from "../components/Dashboard.jsx";
-import NotFoundPage from "../components/NotFoundPage.jsx";
+import EnetryIndex from "../components/global/EnetryIndex.jsx"; //首页UI
+import Dashboard from "../components/dashboard/Dashboard.jsx";
+import NotFoundPage from "../components/global/NotFoundPage.jsx";
 
 export default ({ history,app}) => {
     return  (<Router history={history} >

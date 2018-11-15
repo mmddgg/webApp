@@ -4,9 +4,9 @@ import { Pie, yuan } from 'ant-design-pro/lib/Charts';
 import CountDown from 'ant-design-pro/lib/CountDown';
 import {FormattedMessage ,defineMessages,injectIntl} from 'react-intl';
 import { connect } from 'react-redux';
-import path from "../route/path";
+import path from "../../route/path";
 import {Link} from "react-router-dom";
-import ACTIONS from "../reducers/actions";
+import ACTIONS from "../../models/actions";
 
 const salesPieData = [
   {

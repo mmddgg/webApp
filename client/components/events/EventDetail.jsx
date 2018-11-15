@@ -1,6 +1,6 @@
 import React ,{ Component,PropTypes} from "react";
 import { Icon,Menu} from "antd";
-import checkLoginAndPurview from "../CheckPurview.js";
+import checkLoginAndPurview from "../global/CheckPurview.js";
 
 class EventDetail extends Component{
     render(){

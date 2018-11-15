@@ -1,5 +1,5 @@
 import {message} from "antd";
-import path from "../route/path";
+import path from "../../route/path";
 import {loginTimeout} from "./config"; 
 
 export const   LocalStorage = {

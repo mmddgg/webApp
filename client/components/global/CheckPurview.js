@@ -1,6 +1,6 @@
 import React ,{ Component,PropTypes} from "react";
 import { connect } from 'react-redux'
-import path from "../route/path";
+import path from "../../route/path";
 import { message} from "antd";
 import {checkLogin} from "./unit";
 

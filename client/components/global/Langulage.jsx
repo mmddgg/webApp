@@ -1,9 +1,8 @@
 import "babel-polyfill";
 import React ,{ Component,PropTypes} from "react";
 import { Icon,Col,Menu,Dropdown} from "antd";
-//import { connect } from 'react-redux'
 import {connect} from "dva";
-import ACTIONS from "../reducers/actions";
+import ACTIONS from "../../models/actions";
 import {LocalStorage} from "./unit";
 import "./global.css";
 
