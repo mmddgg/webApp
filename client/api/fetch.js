@@ -2,8 +2,6 @@ import fetch from 'isomorphic-fetch';
 import React from "react";
 import {defineMessages, injectIntl, FormattedMessage} from 'react-intl';
 
-import {Modal} from 'antd';
-
 import ngprogress from "nprogress";
 import "nprogress/nprogress.css";
 

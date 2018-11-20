@@ -1,9 +1,10 @@
 import ngprogress from "nprogress";
 import xFetch from './fetch';
 import {baseUrl,userCenter ,unti} from "./ApiUrl.js";
-import mockData from "../../mock/mock";
+//import mockData from "../../mock/mock";
 
-const mockStatus = false;
+const mockStatus = false ;
+const mockData = {};
 
 export default {
     //登录

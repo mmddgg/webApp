@@ -2,6 +2,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var babelpolyfill = require("babel-polyfill");
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 //配置文档参考 https://doc.webpack-china.org/concepts/
 //新手参考 https://segmentfault.com/a/1190000014112145?utm_source=channel-newest
@@ -13,6 +16,9 @@ const webpackConfig = {
         path:path.resolve(__dirname,'./lib'),
         filename:'script.js'
     },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".json",".jsx"]
+    },
     module: {
         //loaders加载器
         rules: [
@@ -22,9 +28,16 @@ const webpackConfig = {
                 loader: 'babel-loader',//loader的名称（必须）
                 query: {
                   presets: ['es2015','stage-0','react']
-                }
+                },
+                // options: {
+                //     plugins: [  
+                //       ['import', { libraryName: 'antd', style: 'css' }]  // `style: true` 会加载 less 文件  
+                //     ],
+                //     cacheDirectory: true,
+                // }
             },
-            
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
             {test:/\.less$/,loader:'less-loader'},
             {test:/\.sass$/,loader:'sass-loader'},
             {test: /\.css$/, loader: 'style-loader!css-loader' },
@@ -50,8 +63,16 @@ const webpackConfig = {
     
     plugins: [
         new webpack.HotModuleReplacementPlugin(),//模块热替换插件  
-        
-    ]
+        new BundleAnalyzerPlugin(),//查看模块体积
+        new UglifyJsPlugin()
+    ],
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM",
+        'react-router': 'ReactRouter',
+        'redux': 'Redux',
+        'history': 'History'
+    }  //结合CDN推送
 }
 
 module.exports  = webpackConfig;

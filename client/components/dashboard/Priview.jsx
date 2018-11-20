@@ -1,6 +1,6 @@
 import React ,{ Component,PropTypes} from "react";
 import { Card,Row, Col,Steps,Form} from "antd";
-import { Pie, yuan } from 'ant-design-pro/lib/Charts';
+//import { Pie, yuan } from 'ant-design-pro/lib/Charts';
 import CountDown from 'ant-design-pro/lib/CountDown';
 import {FormattedMessage ,defineMessages,injectIntl} from 'react-intl';
 import { connect } from 'react-redux';
@@ -46,7 +46,7 @@ class Priview extends Component{
             <Row gutter={16}>
                 <Col span="16">
                     <Card title="订单统计"  extra={<Link to={path.dashboard.order.orderList}>查看订单</Link>} style={{ width: "100%" }} >
-                        <Pie
+                        {/* <Pie
                             hasLegend title="销售额" subTitle="销售额"
                             total={() => (
                                 <span
@@ -58,7 +58,7 @@ class Priview extends Component{
                             data={salesPieData}
                             valueFormat={val => <span dangerouslySetInnerHTML={{ __html: yuan(val) }} />}
                             height={234}
-                        />
+                        /> */}
                     </Card>
                 </Col>
                 <Col span="8">
