@@ -50,7 +50,7 @@ const webpackConfig = {
         hot:true,
         historyApiFallback: true,//在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         inline: true,//设置为true，当源文件改变时会自动刷新页面
-        port: 5070,//设置默认监听端口，如果省略，默认为"8080"
+        port: 3040,//设置默认监听端口，如果省略，默认为"8080"
         "proxy": {
             "/snatch-manager": {
                 "target":"http://118.190.91.212:2388", //192.168.1.21
@@ -63,7 +63,8 @@ const webpackConfig = {
     
     plugins: [
         new webpack.HotModuleReplacementPlugin(),//模块热替换插件  
-        new BundleAnalyzerPlugin(),//查看模块体积
+        // new BundleAnalyzerPlugin(),//查看模块体积  
+        //"analyzDev": "NODE_ENV=development npm_config_report=true npm run builtDev",
         new UglifyJsPlugin()
     ],
     externals: {

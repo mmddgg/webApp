@@ -77,6 +77,7 @@ const webpackConfig = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),//模块热替换插件  
         //new BundleAnalyzerPlugin(),//查看模块体积
+        //"analyzPro": "NODE_ENV=production npm_config_report=true npm run builtPro",
         new UglifyJsPlugin({
             parallel: 4,
             uglifyOptions: {

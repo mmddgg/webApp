@@ -11,7 +11,6 @@
     "builtPro": "webpack --config ./webpack.pro.config.js",
     "startDev": "webpack-dev-server --config ./webpack.dev.config.js",
     "startPro": "webpack-dev-server --config ./webpack.pro.config.js",
-    "analyzDev": "NODE_ENV=production npm_config_report=true npm run builtDev",
     "trans": "atool-l10n",
     "eslint": "eslint client --fix"
   },
